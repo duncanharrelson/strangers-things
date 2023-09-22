@@ -8,6 +8,7 @@ const MainSection = () => {
                 <Route path="/profile" />
                 <Route path="/login" />
                 <Route path="/register" />
+                <Route path="/posts" />
              </Routes>
         </div>
     )
