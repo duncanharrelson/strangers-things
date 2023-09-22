@@ -8,9 +8,11 @@ function App() {
 
   return (
     <>
-      <NavBar />
-      
-      <MainSection />
+      <div id="container">
+        <NavBar />
+        
+        <MainSection />
+      </div>
     </>
   )
 }
