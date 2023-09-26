@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { registerUser } from "../api/index";
 
-// const COHORT = "2306-ftb-et-web-am"
-// const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
-
 
 const SignUpForm = () => {
     const [username, setUsername] = useState("");
@@ -13,7 +10,11 @@ const SignUpForm = () => {
     async function handleSubmit(event) {
         event.preventDefault();  
         const response = await registerUser(username, password)
-        return response;
+        if (response.success) {
+            return response;
+        } else {
+            setError(response.error);
+        }
     }
 
     return (

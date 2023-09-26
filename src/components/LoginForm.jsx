@@ -15,7 +15,13 @@ function LogIn () {
         event.preventDefault();
         const response = await userLogin(username, password);
         //JWT is returned in the response, utilized in session storage
-        return response;
+        if (response.success) {
+            console.log(response.success);
+            return response;
+        } else {
+            setError(response.error);
+            console.error(error);
+        }
     }
         return (
             <>

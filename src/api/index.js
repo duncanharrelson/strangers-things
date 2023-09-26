@@ -1,7 +1,7 @@
 const COHORT = "2306-FTB-ET-WEB-AM"  
 const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
 
-const getPosts = async () => {
+export async function fetchPosts() {
     try {
       const response = await fetch(`${API_URL}/posts`)
   
@@ -70,5 +70,3 @@ const myData = async (token) => {
         console.error(err);
     }
 }
-
-export default (getPosts, userLogin, myData);
