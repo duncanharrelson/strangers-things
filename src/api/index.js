@@ -3,7 +3,7 @@ const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
 
 const getPosts = async () => {
     try {
-      const response = await fetch(`${API_URL}/users/posts`)
+      const response = await fetch(`${API_URL}/posts`)
   
       const result = await response.json();
       console.log(result);
