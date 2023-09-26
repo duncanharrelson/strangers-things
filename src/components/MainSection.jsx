@@ -11,6 +11,7 @@ const MainSection = () => {
                 <Route path="/profile" />
                 <Route path="/login" />
                 <Route path="/register" element = {<RegisterForm/>} />
+                <Route path="/posts" />
              </Routes>
         </div>
     )
