@@ -1,7 +1,7 @@
 import React from "react";
-// import CreateNewUser from './api/index.js
+import userLogin from '..//api/index'
 import {Routes, Route} from "react-router-dom"
-
+import { useState } from 'react'
 
 function LogIn ({setToken}) {
 
@@ -13,7 +13,7 @@ function LogIn ({setToken}) {
     async function handleSubmit(event) {
         event.preventDefault();
         try {
-            const response= await CreateNewUser()
+            const response= await userLogin()
             console.log(result);
             setToken(result.token);
         } catch (error) {
