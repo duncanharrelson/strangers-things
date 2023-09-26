@@ -1,9 +1,9 @@
-const COHORT = "2306-ftb-et-web-am"
+const COHORT = "2306-FTB-ET-WEB-AM"  
 const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
 
 const getPosts = async () => {
     try {
-      const response = await fetch(`${API_URL}/posts`)
+      const response = await fetch(`${API_URL}/users/posts`)
   
       const result = await response.json();
       console.log(result);
@@ -15,12 +15,12 @@ const getPosts = async () => {
 
 const userLogin = async (username, password) => {
     try {
-        const response = await fetch(`${API_URL}/login`, {
+        const response = await fetch(`${API_URL}/users/login`, {
             method: "POST",
             body: JSON.stringify({
                 user: {
-                    username: username, 
-                    password: password
+                    "username": username, 
+                    "password": password
                 }
             }),
             headers: {
@@ -36,19 +36,20 @@ const userLogin = async (username, password) => {
 
 const registerUser = async (username, password) => {
     try {
-        const response = await fetch(`${API_URL}/register`, {
+        const response = await fetch(`${API_URL}/users/register`, {
             method: "POST",
-            body: JSON.stringify({
-                user: {
-                    username: username, 
-                    password: password
-                }
-            }),
             headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            body: JSON.stringify({
+                user: {
+                    username, 
+                    password
+                }
+            })            
         })
         const result = await response.json();
+        console.log(result);
         return result;
     } catch (err) {
         console.error(err);

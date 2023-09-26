@@ -3,7 +3,10 @@ import userLogin from '..//api/index'
 import {Routes, Route} from "react-router-dom"
 import { useState } from 'react'
 
-function LogIn ({setToken}) {
+const COHORT = "2306-ftb-et-web-am"
+const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
+
+function LogIn () {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -12,13 +15,26 @@ function LogIn ({setToken}) {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        try {
-            const response= await userLogin()
-            console.log(result);
-            setToken(result.token);
-        } catch (error) {
-            setError(error.message);
-        }
+        
+            try {
+                const response = await fetch(`${API_URL}/users/login`, {
+                    method: "POST",
+                    body: JSON.stringify({
+                        user: {
+                            "username": username, 
+                            "password": password
+                        }
+                    }),
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                const result = await response.json();
+                return result;
+            } catch (err) {
+                console.error(err);
+            }
+        
         
     }
         return (
