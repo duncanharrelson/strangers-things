@@ -1,8 +1,8 @@
 import { useState } from "react";
-import  registerUser  from "../api"
+import { registerUser } from "../api/index";
 
-const COHORT = "2306-ftb-et-web-am"
-const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
+// const COHORT = "2306-ftb-et-web-am"
+// const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
 
 
 const SignUpForm = () => {
@@ -12,27 +12,9 @@ const SignUpForm = () => {
 
     async function handleSubmit(event) {
         event.preventDefault();  
-        try {
-                const response = await fetch(`${API_URL}/users/register`, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        user: {
-                            username: username, 
-                            password: password
-                        }
-                    })            
-                })
-                const result = await response.json();
-                console.log(result);
-                return result;
-            } catch (err) {
-                console.error(err);
-            }
-        }
-
+        const response = await registerUser(username, password)
+        return response;
+    }
 
     return (
         <>        

@@ -3,7 +3,7 @@ const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
 
 const getPosts = async () => {
     try {
-      const response = await fetch(`${API_URL}/users/posts`)
+      const response = await fetch(`${API_URL}/posts`)
   
       const result = await response.json();
       console.log(result);
@@ -13,7 +13,7 @@ const getPosts = async () => {
     }
 }
 
-const userLogin = async (username, password) => {
+export async function userLogin (username, password){
     try {
         const response = await fetch(`${API_URL}/users/login`, {
             method: "POST",
@@ -34,7 +34,7 @@ const userLogin = async (username, password) => {
     }
 }
 
-const registerUser = async (username, password) => {
+export async function registerUser(username, password) {
     try {
         const response = await fetch(`${API_URL}/users/register`, {
             method: "POST",
@@ -43,7 +43,7 @@ const registerUser = async (username, password) => {
             },
             body: JSON.stringify({
                 user: {
-                    username, 
+                    username,
                     password
                 }
             })            
@@ -71,4 +71,4 @@ const myData = async (token) => {
     }
 }
 
-export default (getPosts, userLogin, registerUser, myData);
+export default (getPosts, userLogin, myData);
