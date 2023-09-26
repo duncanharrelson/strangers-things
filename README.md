@@ -1,6 +1,5 @@
 # Contributors
 ## Victor Abadie @VictorAbadie
-## Justin Browning @Optimist1c
 ## Duncan Harrelson @duncanharrelson
 ## Derek Wynn Van Norman  @WynnVN
 
