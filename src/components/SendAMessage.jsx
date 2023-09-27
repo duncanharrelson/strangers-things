@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import {react} from 'react'
 
 const COHORT = "2306-FTB-ET-WEB-AM"  
 const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
