@@ -29,6 +29,15 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: hsla(0, 0%, 0%, 1);
+
+background: radial-gradient(circle, hsla(0, 0%, 0%, 1) 0%, hsla(0, 1%, 30%, 1) 70%);
+
+background: -moz-radial-gradient(circle, hsla(0, 0%, 0%, 1) 0%, hsla(0, 1%, 30%, 1) 70%);
+
+background: -webkit-radial-gradient(circle, hsla(0, 0%, 0%, 1) 0%, hsla(0, 1%, 30%, 1) 70%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#000000", endColorstr="#4C4B4B", GradientType=1 );
 }
 
 h1 {
@@ -78,6 +87,18 @@ button:focus-visible {
   border-top: solid white;
   padding: 1.25em;
   margin-bottom: 20px;
+  border-radius: 125px;
+
+  background: hsla(0, 0%, 72%, 1);
+
+background: linear-gradient(315deg, hsla(0, 0%, 72%, 1) 0%, hsla(126, 68%, 31%, 1) 32%, hsla(279, 85%, 29%, 1) 72%, hsla(0, 0%, 72%, 1) 100%);
+
+background: -moz-linear-gradient(315deg, hsla(0, 0%, 72%, 1) 0%, hsla(126, 68%, 31%, 1) 32%, hsla(279, 85%, 29%, 1) 72%, hsla(0, 0%, 72%, 1) 100%);
+
+background: -webkit-linear-gradient(315deg, hsla(0, 0%, 72%, 1) 0%, hsla(126, 68%, 31%, 1) 32%, hsla(279, 85%, 29%, 1) 72%, hsla(0, 0%, 72%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B8B8B8", endColorstr="#198423", GradientType=1 );
+  
 }
 
 .cards { 
@@ -85,14 +106,24 @@ button:focus-visible {
   padding: 10px;
   margin: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 125px;
   box-shadow: 0 2px 5px #0c0c0c1a;
+  background: hsla(0, 0%, 72%, 1);
+
+  background: linear-gradient(315deg, hsla(0, 0%, 72%, 1) 0%, hsla(279, 85%, 29%, 1) 32%, hsla(126, 68%, 31%, 1) 72%, hsla(0, 0%, 72%, 1) 100%);
+  
+  background: -moz-linear-gradient(315deg, hsla(0, 0%, 72%, 1) 0%, hsla(279, 85%, 29%, 1) 32%, hsla(126, 68%, 31%, 1) 72%, hsla(0, 0%, 72%, 1) 100%);
+  
+  background: -webkit-linear-gradient(315deg, hsla(0, 0%, 72%, 1) 0%, hsla(279, 85%, 29%, 1) 32%, hsla(126, 68%, 31%, 1) 72%, hsla(0, 0%, 72%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B8B8B8", endColorstr="#5C0B88", GradientType=1 );
 }
 
 #container {
   display: flex;
   flex-direction: column;
   place-items: center;
+  color: gainsboro;
 
 }
 
