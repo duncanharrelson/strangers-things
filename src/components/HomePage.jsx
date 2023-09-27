@@ -24,18 +24,18 @@ const HomePage = () => {
 
   const postsToDisplay = searchParams
         ? posts.filter((post) => 
-            post.toLowerCase().includes(searchParams)
+            post.title.toLowerCase().includes(searchParams)
             ) 
         : posts;
 
   return (
     <>
-      <div>
+      <div className='searchbar'>
         <label>
-          Search{" "}
+          Search Posts:{" "}
           <input
             type="text"
-            placeholder="search"
+            placeholder="Search"
             onChange={(e) => setSearchParams(e.target.value.toLowerCase())}
           />
         </label>
@@ -45,7 +45,7 @@ const HomePage = () => {
           <>
             {/* <h2>{post.title}</h2> */}
             {/* <PostListName key={post.id} title={post.title} /> */}
-            <div id="container">
+            <div className="cards">
               <h2>Title: {post && post.title}</h2>
               <h2>Author: {post && post.author.username}</h2>
               <h3>Description: {post && post.description}</h3>
@@ -60,41 +60,3 @@ const HomePage = () => {
 };  
 
 export default HomePage;
-// export default function HomePage () {
-//     return (
-//         <>
-//     <h1>Stranger's Things</h1>
-
-//     <form>
-//         <h2>Log in:</h2>
-//         <label>
-//             Username: <input/>
-//             Password: <input/>
-
-//             <h5>Not Registered? Click here.</h5>
-
-
-//         </label>
-//     </form>
-//     </>
-//     )
-// }
-
-// return ( 
-//     <>
-//     <div className="npr">
-//         <h2 className="new-player">New Player Registration:</h2>
-//         <form>
-//             <label className="name">
-//                 Name: <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Name"/>
-//             </label>
-//             <label className="breed">
-//                 Breed: <input value={breed} onChange={(e) => setBreed(e.target.value)} placeholder="Breed"/>
-//             </label>
-//             <br />
-//             <br />
-//             <button className="submit" type="submit">Submit</button>
-//         </form>
-//         </div>
-//     </>
-// );

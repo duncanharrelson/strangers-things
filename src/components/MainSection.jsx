@@ -7,7 +7,7 @@ import NewPostForm from "./MakePost"
 
 const MainSection = () => {
     return (
-        <div id="main-section">
+        <div className="">
             <Routes>
                 <Route path="/" element ={<HomePage/>} />
                 <Route path="/profile" element = {<UserProfile />}/>
