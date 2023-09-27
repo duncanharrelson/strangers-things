@@ -91,17 +91,42 @@ export async function fetchSinglePost(id) {
     }
 }
 
-const myData = async (token) => {
+export const myData = async (token) => {
     try {
-        const response = await fetch(`${API_URL}/profile`, {
+        const response = await fetch(`${API_URL}/users/me`, {
             headers: {
                 "Content-Type": "application/json",
                 "Authorization": `Bearer ${token}`
             }
         });
         const result = await response.json();
+        console.log(result)
         return result;
+        ;
     } catch (err) {
         console.error(err);
     }
 }
+
+export async function makeMessage(id, content) {
+    try {
+        const response = await fetch(`${API_URL}/posts/${id}/messages`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            message: {
+              "content": content
+              
+            }
+          })
+        });
+        const result = await response.json();
+        console.log(result);
+        return result
+      } catch (err) {
+        console.error(err);
+      }
+    }

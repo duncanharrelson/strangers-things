@@ -2,7 +2,7 @@ import React from "react";
 import {Routes, Route} from "react-router-dom"
 import { useState } from 'react'
 import { userLogin } from "../api/index";
-
+import { Navigate } from "react-router-dom";
 
 function LogIn () {
 
@@ -10,14 +10,16 @@ function LogIn () {
     const [password, setPassword] = useState("");
     const [error, setError]= useState(null);
     const [valid, setValid]=useState(false);
+    const [toProfile, setToProfile] = React.useState(false)
 
     async function handleSubmit(event) {
         event.preventDefault();
         const response = await userLogin(username, password);
+        sessionStorage.setItem("token", response.data.token)
         //JWT is returned in the response, utilized in session storage
         if (response.success) {
             console.log(response.success);
-            return response;
+            return <Navigate to="/" />;
         } else {
             setError(response.error);
             console.error(error);
@@ -27,7 +29,7 @@ function LogIn () {
             <>
             <h2>Log In!!</h2>
             {error && <p>{error}</p>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} >
             <label>
                 Username: <input value={username} onChange={(e)=> setUsername(e.target.value)} />
                 {username.length <=8 ? (

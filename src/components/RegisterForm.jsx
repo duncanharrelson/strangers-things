@@ -10,6 +10,7 @@ const SignUpForm = () => {
     async function handleSubmit(event) {
         event.preventDefault();  
         const response = await registerUser(username, password)
+        sessionStorage.setItem("token", response.data.token)
         if (response.success) {
             return response;
         } else {
