@@ -2,6 +2,7 @@ import react, { useEffect } from 'react'
 import { fetchPosts } from "../api/index"
 import { useState } from 'react'
 import PostListName from './PostListName';
+import  SendAMessage from "./SendAMessage";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
@@ -51,6 +52,9 @@ const HomePage = () => {
               <h3>Description: {post && post.description}</h3>
               <h3>Price: {post && post.price}</h3>
               <h3>Will Deliver: {post && `${post.willDeliver}`}</h3>
+
+            {/* {authToken && <SendAMessage/>  */}
+            
             </div>
           </>
         );
