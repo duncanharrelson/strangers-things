@@ -56,6 +56,32 @@ export async function registerUser(username, password) {
     }
 }
 
+export async function makePost(title, description, price, willDeliver, token) {
+    try {
+        const response = await fetch(`${API_URL}/posts`, {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+          },
+          body: JSON.stringify({
+            post: {
+              "title": title,
+              "description": description,
+              "price": price,
+              "willDeliver": willDeliver
+            }
+          })
+        });
+        const result = await response.json();
+        console.log(result);
+        return result
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+
 const myData = async (token) => {
     try {
         const response = await fetch(`${API_URL}/profile`, {
