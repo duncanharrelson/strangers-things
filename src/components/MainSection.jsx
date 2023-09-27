@@ -3,6 +3,8 @@ import HomePage from "./HomePage"
 import RegisterForm from "./RegisterForm"
 import LoginForm from "./LoginForm"
 import UserProfile from "./UserProfile"
+import NewPostForm from "./MakePost"
+
 const MainSection = () => {
     return (
         <div id="main-section">
@@ -11,7 +13,7 @@ const MainSection = () => {
                 <Route path="/profile" element = {<UserProfile />}/>
                 <Route path="/login" element={<LoginForm/>}/>
                 <Route path="/register" element = {<RegisterForm/>} />
-                <Route path="/posts" />
+                <Route path="/posts" element = {<NewPostForm />}/>
              </Routes>
         </div>
     )

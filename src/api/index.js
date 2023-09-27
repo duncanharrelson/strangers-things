@@ -81,6 +81,15 @@ export async function makePost(title, description, price, willDeliver, token) {
       }
     }
 
+export async function fetchSinglePost(id) {
+    try {
+        const response = await fetch(`${API_URL}/posts/${id}`);
+        const result = await response.json();
+        return result;
+    } catch (error) {
+        console.error(`Trouble fetching post ${id}`);
+    }
+}
 
 const myData = async (token) => {
     try {
