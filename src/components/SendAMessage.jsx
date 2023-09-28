@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import {react} from 'react'
 
 const COHORT = "2306-FTB-ET-WEB-AM"  
 const API_URL = `https://strangers-things.herokuapp.com/api/${COHORT}`
@@ -35,7 +34,7 @@ return (
     {authToken && 
     <form>
         <label>
-            <textarea value={content} onChange={(e)=>setContent(e.target.value)} name="textarea" id="textarea" cols="30" rows="10"placeholder="Leave you message here."></textarea>
+            <textarea value={content} onChange={(e)=>setContent(e.target.value)} name="textarea" id="textarea" cols="30" rows="10"placeholder="Leave your message here."></textarea>
             <button>Send Message</button>
         </label>
     </form>
